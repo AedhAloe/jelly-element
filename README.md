@@ -18,19 +18,33 @@ npm install jelly-element
 
 ## 🔨 使用
 
-在你的 Vue3 项目中引入并注册组件：
+在你的 Vue3 项目中引入并使用组件：
+
+### 全局注册
 
 ```ts
-import { SGButton, SGDropdown } from 'jelly-element'
-import 'jelly-element/dist/index.css'
+import { createApp } from 'vue'
+import JellyElement from 'jelly-element'
+import 'jelly-element/dist/style.css'
+import App from './App.vue'
 
-export default {
-  components: {
-    SGButton,
-    SGDropdown,
-    // ...其他组件
-  }
-}
+const app = createApp(App)
+app.use(JellyElement)
+app.mount('#app')
+```
+
+### 按需引入
+
+```vue
+<template>
+  <SGButton type="primary">按钮</SGButton>
+  <SGDropdown>下拉菜单</SGDropdown>
+</template>
+
+<script setup lang="ts">
+import { SGButton, SGDropdown } from 'jelly-element'
+import 'jelly-element/dist/style.css'
+</script>
 ```
 
 ## 🗂️ 目录结构

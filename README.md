@@ -14,8 +14,6 @@ Jelly-Element 是一个基于 **Vue3 + TypeScript** 的组件库，灵感来源�
 
 ```bash
 npm install jelly-element
-# 或
-yarn add jelly-element
 ```
 
 ## 🔨 使用

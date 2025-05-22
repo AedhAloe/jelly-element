@@ -14,6 +14,11 @@ export default defineConfig({
       outDir: 'dist/types',
     }),
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

@@ -1,6 +1,6 @@
 {
   "name": "jelly-element",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": false,
   "type": "module",
   "description": "一个基于 Vue3 + TypeScript 的组件库",

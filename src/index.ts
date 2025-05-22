@@ -1,26 +1,26 @@
 // 导入所有组件
-import JellyButton from './components/Button'
-import JellyDropdown from './components/Dropdown'
-import JellyMessage from './components/Message'
-import JellyInput from './components/Input'
-import JellySwitch from './components/Switch'
-import JellyCollapse from './components/Collapse'
-import JellyTooltip from './components/Tooltip'
-import JellyIcon from './components/Icon'
+import SGButton from './components/Button/Button.vue'
+import SGDropdown from './components/Dropdown/Dropdown.vue'
+import SGMessage from './components/Message/Message.vue'
+import SGInput from './components/Input/Input.vue'
+import SGSwitch from './components/Switch/Switch.vue'
+import SGCollapse from './components/Collapse/Collapse.vue'
+import SGTooltip from './components/Tooltip/Tooltip.vue'
+import SGIcon from './components/Icon/Icon.vue'
 
 // 导入样式
 import './styles/index.css'
 
 // 组件列表
 const components = [
-  JellyButton,
-  JellyDropdown,
-  JellyMessage,
-  JellyInput,
-  JellySwitch,
-  JellyCollapse,
-  JellyTooltip,
-  JellyIcon,
+  SGButton,
+  SGDropdown,
+  SGMessage,
+  SGInput,
+  SGSwitch,
+  SGCollapse,
+  SGTooltip,
+  SGIcon,
 ]
 
 // 定义 install 方法
@@ -32,15 +32,18 @@ const install = (app: any) => {
 
 // 导出所有组件
 export {
-  JellyButton,
-  JellyDropdown,
-  JellyMessage,
-  JellyInput,
-  JellySwitch,
-  JellyCollapse,
-  JellyTooltip,
-  JellyIcon,
+  SGButton,
+  SGDropdown,
+  SGMessage,
+  SGInput,
+  SGSwitch,
+  SGCollapse,
+  SGTooltip,
+  SGIcon,
 }
+
+// 导出类型
+export type { ButtonProps, ButtonInstance } from './components/Button/types'
 
 // 默认导出
 export default {

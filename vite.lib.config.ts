@@ -1,25 +1,22 @@
-import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { resolve } from 'path'
+import dts from 'vite-plugin-dts'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    vueDevTools(),
+    dts({
+      include: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.vue'],
+      outDir: 'dist/types',
+    }),
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
-  },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/main.ts'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'JellyElement',
       fileName: (format) => `jelly-element.${format}.js`,
     },
@@ -33,5 +30,9 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: true,
+    // 确保生成 commonjs 和 es 模块
+    target: 'esnext',
+    minify: 'terser',
   },
-})
+}) 

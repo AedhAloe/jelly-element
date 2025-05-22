@@ -1,8 +1,36 @@
 {
   "name": "jelly-element",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "private": false,
   "type": "module",
+  "description": "一个基于 Vue3 + TypeScript 的组件库",
+  "main": "dist/jelly-element.umd.js",
+  "module": "dist/jelly-element.es.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "vue3",
+    "typescript",
+    "component-library",
+    "ui",
+    "jelly-element"
+  ],
+  "author": "AedhAloe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AedhAloe/jelly-element.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AedhAloe/jelly-element/issues"
+  },
+  "homepage": "https://github.com/AedhAloe/jelly-element#readme",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -12,7 +40,9 @@
     "lint": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "prepublishOnly": "npm run build:lib"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -23,7 +53,7 @@
     "@vitepress-demo-preview/plugin": "^1.4.0",
     "axios": "^1.8.4",
     "lodash-es": "^4.17.21",
-    "vue": "^3.5.13"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
@@ -46,9 +76,11 @@
     "postcss-each-variables": "^0.3.0",
     "postcss-for": "^2.1.1",
     "postcss-nested": "^7.0.2",
+    "terser": "^5.39.2",
     "typescript": "~5.8.0",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.2.1",
+    "vite-plugin-dts": "^4.5.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vitepress": "^1.6.3",

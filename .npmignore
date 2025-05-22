@@ -1,0 +1,33 @@
+# 开发相关
+.vscode/
+.idea/
+.git/
+.gitignore
+.editorconfig
+*.log
+
+# 依赖
+node_modules/
+package-lock.json
+
+# 构建相关
+dist/
+docs/
+public/
+*.local
+
+# 测试
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# 其他
+*.md
+!README.md
+.env*
+.eslintrc*
+.prettierrc*
+tsconfig*.json
+vite.config.ts
+vite.lib.config.ts 

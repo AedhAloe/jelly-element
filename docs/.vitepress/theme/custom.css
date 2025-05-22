@@ -1,0 +1,19 @@
+:root{
+    --vp-c-brand-1: var(--sg-color-primary);
+    --vp-c-brand-2: var(--sg-color-primary-light-3);
+    --vp-c-brand-3: var(--sg-color-primary-light-5);
+    --vp-c-brand-soft: var(--sg-color-primary-dark-2);
+}
+
+body {
+    color: var(--vp-c-text-1);
+}
+
+h1,h2,h3, h4,h5,h6,p {
+    color: var(--vp-c-text-1);
+}
+
+/* 夜间模式下表格文字颜色 */
+.dark .vp-doc table {
+    color: var(--vp-c-text-1);
+}

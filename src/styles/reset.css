@@ -1,0 +1,23 @@
+body {
+    font-family: var(--sg-font-family);
+    font-weight: 400;
+    font-size: var( --sg-font-size-base);
+    color: var( --sg-text-color-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+a {
+    color: var(--sg-color-primary);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: var(--sg-color-primary-light-3);
+    }
+
+    &:active {
+        color: var(--sg-color-primary-dark-2);
+    }
+}

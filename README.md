@@ -21,13 +21,13 @@ npm install jelly-element
 在你的 Vue3 项目中引入并注册组件：
 
 ```ts
-import { JellyButton, JellyDropdown } from 'jelly-element'
+import { SGButton, SGDropdown } from 'jelly-element'
 import 'jelly-element/dist/index.css'
 
 export default {
   components: {
-    JellyButton,
-    JellyDropdown,
+    SGButton,
+    SGDropdown,
     // ...其他组件
   }
 }

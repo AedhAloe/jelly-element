@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
+import * as ts from 'typescript'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,8 +11,20 @@ export default defineConfig({
     vue(),
     vueJsx(),
     dts({
-      include: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.vue'],
+      include: ['src'],
+      exclude: [
+        // 排除测试相关文件
+        'src/**/__tests__/**',
+        'src/**/*.test.ts',
+        'src/**/*.test.tsx',
+        'src/**/*.spec.ts',
+        'src/**/*.spec.tsx',
+        // 排除示例和入口文件
+        'src/App.vue',
+        'src/main.ts'
+      ],
       outDir: 'dist/types',
+      tsconfigPath: './tsconfig.json'
     }),
   ],
   resolve: {
@@ -33,6 +46,10 @@ export default defineConfig({
         globals: {
           vue: 'Vue',
         },
+        sourcemap: true,
+        assetFileNames: (assetInfo) => {
+          return assetInfo.name === 'style.css' ? 'style.css' : '[name][extname]'
+        }
       },
     },
     sourcemap: true,

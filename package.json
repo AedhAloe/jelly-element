@@ -1,15 +1,27 @@
 {
   "name": "jelly-element",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "private": false,
   "type": "module",
   "description": "一个基于 Vue3 + TypeScript 的组件库",
   "main": "dist/jelly-element.umd.js",
   "module": "dist/jelly-element.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "./dist/types/src/index.d.ts",
   "files": [
     "dist",
     "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/src/index.d.ts",
+      "import": "./dist/jelly-element.es.js",
+      "require": "./dist/jelly-element.umd.js"
+    },
+    "./dist/style.css": "./dist/jelly-element.css"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
   ],
   "keywords": [
     "vue3",

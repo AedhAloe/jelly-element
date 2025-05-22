@@ -11,6 +11,16 @@ import SGIcon from './components/Icon/Icon.vue'
 // 导入样式
 import './styles/index.css'
 
+// 导入类型
+import type { ButtonProps, ButtonInstance } from './components/Button/types'
+import type { InputProps } from './components/Input/types'
+import type { MessageProps } from './components/Message/types'
+import type { DropdownProps } from './components/Dropdown/types'
+import type { SwitchProps } from './components/Switch/types'
+import type { CollapseProps } from './components/Collapse/types'
+import type { TooltipProps } from './components/Tooltip/types'
+import type { IconProps } from './components/Icon/types'
+
 // 组件列表
 const components = [
   SGButton,
@@ -42,8 +52,18 @@ export {
   SGIcon,
 }
 
-// 导出类型
-export type { ButtonProps, ButtonInstance } from './components/Button/types'
+// 导出所有类型
+export type {
+  ButtonProps,
+  ButtonInstance,
+  InputProps,
+  MessageProps,
+  DropdownProps,
+  SwitchProps,
+  CollapseProps,
+  TooltipProps,
+  IconProps,
+}
 
 // 默认导出
 export default {

@@ -19,6 +19,8 @@ const size=ref<any>('3x')
 const openValue = ref(['a'])
 const trigger=ref<any>('click')
 const switchValue = ref(false)
+const activeText = ref('开启')
+const inactiveText = ref('关闭')
 const options:MenuOption[]=[
   {key:'1',label:'1item',disabled:true},
   {key:'2',label:h('b',"bold here")},
@@ -47,7 +49,10 @@ onMounted(() => {
     message: 'hello world5', duration: 0,
     type: 'warning'
   })
-  createMessage({message:'hello world2'})
+  createMessage({
+    message: 'hello world2',
+    type: 'info'
+  })
 
 
   setTimeout(()=>{
